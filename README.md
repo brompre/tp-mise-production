@@ -17,4 +17,4 @@ python -m pip install --upgrade pip
 python -m pip install tox
 
 
-tp-mise-production/packages/regression_model/tox
+cd packages/regression_model
