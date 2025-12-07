@@ -18,3 +18,5 @@ python -m pip install tox
 
 
 cd packages/regression_model
+# pour ne pas avoir de problème d'instllation de nouveau composants
+tox -r
