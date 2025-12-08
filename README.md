@@ -14,8 +14,8 @@ deactivate
 
 # Dans l'env virutel si pas deja fait 
 python -m pip install --upgrade pip
-python -m pip install tox
-
+# on install tox 3 car sinon pplusieurs problème de version.
+python -m pip install "tox<4"
 
 cd packages/regression_model
 # pour ne pas avoir de problème d'instllation de nouveau composants
@@ -26,7 +26,11 @@ tox -r -e regression_model
 # Environnement pour construire le package localement
 tox -r -e install_locally
 
-# ajout section ml_api pour flask car on ne veut pas avoir d'erreur de version de composant
-# on laisse l'environnement virtuel clean avec tox et les env tox vont avoir les composants nécessaire pour le projet. 
-# Obliger de forcer Jinja2==2.11.3 avec flask 1.0.2
-tox -r -e ml_api
+# pour executer l'api 
+# Aller dans le répertoire ml_api
+pip install -r requirements.txt
+python run.py
+
+# Ouvrir un 2e terminal pour executer les tests de l'api
+# Il faut être dans son environnement (virtuel?) et aller dans répertoire ml_api
+python -m pytest tests
