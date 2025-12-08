@@ -15,6 +15,7 @@ deactivate
 # Dans l'env virutel si pas deja fait 
 python -m pip install --upgrade pip
 # on install tox 3 car sinon plusieurs problème de version.
+# pas nécessaire d'installer TOX si on execute dans l'environnement
 python -m pip install "tox<4"
 
 cd packages/regression_model
