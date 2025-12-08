@@ -1,0 +1,6 @@
+# api
+flask
+
+# local regression_model package
+# update with your local path
+-e "C:\TP\tp-mise-production\packages\regression_model"

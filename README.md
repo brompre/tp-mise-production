@@ -19,9 +19,14 @@ python -m pip install tox
 
 cd packages/regression_model
 # pour ne pas avoir de problème d'instllation de nouveau composants
-# De base
-tox 
+# ajouter -r pour recreer l'env tox. EX tox -r -e regression_model
+# des fois quand un nouveau composant doit être installé tox est en erreur.
 # Environnement principal pour les tests du modèle
-tox -e regression_model
+tox -r -e regression_model
 # Environnement pour construire le package localement
-tox -e install_locally
+tox -r -e install_locally
+
+# ajout section ml_api pour flask car on ne veut pas avoir d'erreur de version de composant
+# on laisse l'environnement virtuel clean avec tox et les env tox vont avoir les composants nécessaire pour le projet. 
+# Obliger de forcer Jinja2==2.11.3 avec flask 1.0.2
+tox -r -e ml_api
