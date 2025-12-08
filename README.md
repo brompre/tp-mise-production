@@ -3,7 +3,7 @@ TP pour cours mise en production
 
 Il faut avoir la version python 3.7 d'installé.
 
-py -3.7 python -m venv ../enA61-prod
+# Créer son environnement virtuel si pas déjà fait
 py -3.7 -m venv ../enA61-prod
 
 # Pour activé depuis le répertoire tp-mise-production
@@ -19,4 +19,9 @@ python -m pip install tox
 
 cd packages/regression_model
 # pour ne pas avoir de problème d'instllation de nouveau composants
-tox -r
+# De base
+tox 
+# Environnement principal pour les tests du modèle
+tox -e regression_model
+# Environnement pour construire le package localement
+tox -e install_locally
