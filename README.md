@@ -41,3 +41,8 @@ python run.py
 # Ouvrir un 2e terminal pour executer les tests de l'api
 # Il faut être dans son environnement (virtuel?) et aller dans répertoire ml_api
 python -m pytest tests
+
+
+
+# Pour les test avec test_prediction_endpoint_returns_prediction. La fonction def make_prediction recevait seulement def make_prediction(*, input_data) -> dict:
+# Corriger l'entré pour accepter les json ou dict.
